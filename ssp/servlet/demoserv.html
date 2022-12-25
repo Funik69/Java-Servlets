@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="content.html"><img align="right" src="imgs/return.gif" alt="" ></a>
+    <h2><b>Explicitly read form parameter and display user name</b><a href="fread.html"><img src="imgs/execute.gif"></a></h2>
+    <h4><u>fread.html</u></h4>
+    <pre>
+        &ltform action="welcome" method="get">  
+        Enter your name&ltbr>&ltinput type="text" name="name">&ltbr>  
+        Enter Rollno:&ltbr>&ltinput type="text" name="rollno">&ltbr>
+        Enter Branch: &ltbr>&ltinput type="text" name="branch">&ltbr>&ltbr>
+        &ltinput type="submit" value="show">  
+        &lt/form>
+    </pre>
+    <h4><u>DemoServ.java</u></h4>
+    <pre>
+        import javax.servlet.http.*;  
+        import javax.servlet.*;  
+        import java.io.*;  
+        public class DemoServ extends HttpServlet{  
+        public void doGet(HttpServletRequest req,HttpServletResponse res)  
+        throws ServletException,IOException  
+        {  
+        res.setContentType("text/html");  
+        PrintWriter pw=res.getWriter();  
+        String name=req.getParameter("name"); 
+        String branch=req.getParameter("branch"); 
+        String rollno=req.getParameter("rollno"); 
+        pw.println("Welcome "+name);  
+        pw.println("your roll no is "+rollno);
+        pw.println("you are from " +branch+ " Branch");
+          
+        pw.close();  
+        }} 
+    </pre>
+</body>
+</html>
+
+
+

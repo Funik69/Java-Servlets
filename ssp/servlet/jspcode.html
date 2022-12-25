@@ -1,0 +1,21 @@
+<a href="content.html"><img align="right" src="imgs/return.gif" alt="" ></a>
+<h2><b>Source Code for JSP</b><a href="http://localhost:8080/ssp/Jsp.jsp"><img src="imgs/execute.gif"></a></h2>
+<pre>
+&lt!DOCTYPE html>
+&lthtml>
+&lthead>
+&lt/head>
+&ltbody>
+ 
+  &lth2>Jsp containing some info</h2><br>
+&lth4>Current Time: <%= new java.util.Date() %></h4>
+&lth4>Server: <%= application.getServerInfo() %></h4>
+&lth4>Session: <%= session.getId() %></h4> 
+&ltform action="Jsp.jsp" method="post" >
+    &ltinput type="text" name="name" id="name" />
+    &ltinput type="submit" />
+</form>
+&lth4>Parameters: <%= request.getParameter("name") %></h4>
+</body>
+</html>
+</pre>

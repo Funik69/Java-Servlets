@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal counter</title>
+</head>
+<body>
+    <a href="content.html"><img align="right" src="imgs/return.gif" alt="" ></a>
+    <h2>Source code for Normal counter<a href="http://localhost:8080/ssp/servlet/Ncount"><img src="imgs/execute.gif"></a></h2>
+    <pre>
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class Ncount extends HttpServlet {
+int count=0;
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    throws IOException, ServletException
+    {   
+        count++;
+        String show="No of Count is";
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println(show + count);}
+}
+    </pre>
+</body>
+</html>
+

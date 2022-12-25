@@ -1,0 +1,55 @@
+<a href="content.html"><img align="right" src="imgs/return.gif" alt="" ></a>
+<h2><b>Source Code for RequestDispatcher</b><a href="Rdindex.html"><img src="imgs/execute.gif"></a></h2>
+<pre><u><h4>index.html</h4></u>
+        &ltform action="servlet1" method="post">  
+        Name:&ltinput type="text" name="userName"/><br/>  
+        Password:&ltinput type="password" name="userPass"/><br/>  
+        &ltinput type="submit" value="login"/>  
+        </form>  
+
+<u><h4>Login.java</h4></u>
+import java.io.*;  
+import javax.servlet.*;  
+import javax.servlet.http.*;  
+public class Login extends HttpServlet {  
+public void doPost(HttpServletRequest request, HttpServletResponse response)  
+        throws ServletException, IOException {  
+    response.setContentType("text/html");  
+    PrintWriter out = response.getWriter();  
+    String n=request.getParameter("userName");  
+    String p=request.getParameter("userPass");  
+          
+    if(p.equals("servlet"){  
+        RequestDispatcher rd=request.getRequestDispatcher("servlet2");  
+        rd.forward(request, response);  
+    }  
+    else{  
+        out.print("Sorry UserName or Password Error!");  
+        RequestDispatcher rd=request.getRequestDispatcher("/index.html");  
+        rd.include(request, response);  
+                      
+        }  
+    }  
+  
+}  
+
+<u><h4>WelcomeServlet.java</h4></u>
+import java.io.*;  
+import javax.servlet.*;  
+import javax.servlet.http.*;  
+  
+public class WelcomeServlet extends HttpServlet {  
+  
+    public void doPost(HttpServletRequest request, HttpServletResponse response)  
+        throws ServletException, IOException {  
+  
+    response.setContentType("text/html");  
+    PrintWriter out = response.getWriter();  
+          
+    String n=request.getParameter("userName");  
+    out.print("Welcome "+n);  
+    }  
+  
+}
+
+</pre>

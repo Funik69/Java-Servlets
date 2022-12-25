@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloWorld</title>
+</head>
+<body>
+    <a href="content.html"><img align="right" src="imgs/return.gif" alt="" ></a>
+    <h2><b>Source Code for Hello World</b><a href="http://localhost:8080/ssp/servlet/HelloWorld"><img src="imgs/execute.gif"></a></h2>
+    <pre>
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class HelloWorld extends HttpServlet {
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    throws IOException, ServletException
+    {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println(&quot;<font color="#009900">&lt;html&gt\n;</font>&quot;
+        +&quot;<font color="#009900">&lt;head&gt;</font>&quot;
+        +&quot;<font color="#009900">&lt;title&gt;Hello World!&lt;/title&gt\n;</font>&quot;
+        +&quot;<font color="#009900">&lt;/head&gt;</font>&quot;
+        +&quot;<font color="#009900">&lt;body&gt;</font>&quot;);
+        +&quot;<font color="#009900">&lt;h1&gt;Hello World!&lt;/h1&gt;\n</font>&quot;
+        +&quot;<font color="#009900">&lt;/body&gt;\n</font>&quot;
+        &quot;<font color="#009900">&lt;/html&gt;</font>&quot;);
+    </pre>
+
+
+
+
+
+
+       
+}
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="content.html"><img align="right" src="imgs/return.gif" alt="" ></a>
+<h2><b>Source Code for Cookie set and read</b><a href="ckiee.html"><img src="imgs/execute.gif"></a></h2>
+<h4><u>ckiee.html</u></h4>
+<pre>        &ltform action="FirstServlet" method="post">  
+        Name:&ltinput type="text" name="userName"/>&ltbr/>  
+        &ltinput type="submit" value="go"/>  
+        &lt/form>
+</pre>
+<h4><u>FirstServlet.java</u></h4>
+<pre>
+       import java.io.*;  
+       import javax.servlet.*;  
+       import javax.servlet.http.*;  
+       public class FirstServlet extends HttpServlet {  
+         public void doPost(HttpServletRequest request, HttpServletResponse response){  
+           try{  
+           response.setContentType("text/html");  
+           PrintWriter out = response.getWriter();  
+                 
+           String n=request.getParameter("userName");  
+           out.print("Welcome "+n);  
+         
+           Cookie ck=new Cookie("uname",n);//creating cookie object  
+           response.addCookie(ck);//adding cookie in the response  
+         
+           //creating submit button  
+           out.print("&ltform action='SecondServlet'>");  
+           out.print("&ltinput type='submit' value='go'>");  
+           out.print("&lt/form>");  
+           out.close();  
+          }catch(Exception e){System.out.println(e);}  
+         }  
+       }
+</pre>
+<h4><u>SecondServlet.java</u></h4>
+<pre>
+       import java.io.*;
+       import java.rmi.ServerException;
+       import javax.servlet.*;  
+       import javax.servlet.http.*;  
+       public class SecondServlet extends HttpServlet {   
+       public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException,ServerException{    
+           response.setContentType("text/html");  
+           PrintWriter out = response.getWriter();  
+           Cookie ck[]=request.getCookies();  
+           out.print("Hello "+ck[0].getValue());  
+           out.close();       
+           } 
+           public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException,ServerException{
+               doGet(request,response);
+           } 
+       } 
+</pre>
+</body>
+</html>

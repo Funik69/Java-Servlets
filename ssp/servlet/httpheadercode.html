@@ -1,0 +1,46 @@
+<a href="content.html"><img align="right" src="imgs/return.gif" alt="" ></a>
+<h2><b>Source Code for Showing HttpHeader</b><a href="http://localhost:8080/ssp/hs"><img src="imgs/execute.gif"></a></h2>
+<pre>
+      import java.io.*;
+      import javax.servlet.*;
+      import javax.servlet.http.*;
+      import java.util.*;
+  
+  public class HeaderServlet extends HttpServlet {
+    public void doGet(HttpServletRequest request,
+                      HttpServletResponse response)
+        throws ServletException, IOException {
+      response.setContentType("text/html");
+      PrintWriter out = response.getWriter();
+      String title = "Servlet Example: Showing Request Headers";
+      out.println(title +
+                  "&ltBODY BGCOLOR=\"#FDF5E6\">\n" +
+                  "&ltH1 ALIGN=CENTER>" + title + "</H1>\n" +
+                  "&ltB>Request Method: </B>" +
+                  request.getMethod() + "&ltBR>\n" +
+                  "&ltB>Request URI: </B>" +
+                  request.getRequestURI() + "&ltBR>\n" +
+                  "&ltB>Request Protocol: </B>" +
+                  request.getProtocol() + "&ltBR>&ltBR>\n" +
+                  "&ltTABLE BORDER=1 ALIGN=CENTER>\n" +
+                  "&ltTR BGCOLOR=\"#FFAD00\">\n" +
+                  "&ltTH>Header Name<TH>Header Value");
+                  Enumeration headerNames = request.getHeaderNames();
+                  while(headerNames.hasMoreElements()) {
+                    String headerName = (String)headerNames.nextElement();
+                    out.println("&ltTR><TD>" + headerName);
+                    out.println("    &ltTD>" + request.getHeader(headerName));
+                  }
+                  out.println("</TABLE>\n</BODY>&lt/HTML>");
+                }
+              
+                /** Let the same servlet handle both GET and POST. */
+                
+                public void doPost(HttpServletRequest request,
+                                   HttpServletResponse response)
+                    throws ServletException, IOException {
+                  doGet(request, response);
+                }
+              }
+  
+</pre>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+<servlet>
+<display-name>HitCounter</display-name>
+<servlet-name>Count</servlet-name>
+<servlet-class>Count</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Count</servlet-name>
+<url-pattern>/Count</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+<display-name>title</display-name>
+<servlet-name>HelloWorld</servlet-name>
+<servlet-class>HelloWorld</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>HelloWorld</servlet-name>
+<url-pattern>/servlet/HelloWorld</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<display-name>count</display-name>
+<servlet-name>Ncount</servlet-name>
+<servlet-class>Ncount</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Ncount</servlet-name>
+<url-pattern>/servlet/Ncount</url-pattern>
+</servlet-mapping>
+
+<servlet>  
+<servlet-name>s1</servlet-name>  
+<servlet-class>FirstServlet</servlet-class>  
+</servlet>  
+
+  <servlet>  
+<servlet-name>s2</servlet-name>  
+<servlet-class>SecondServlet</servlet-class>  
+</servlet> 
+
+<servlet-mapping>  
+<servlet-name>s1</servlet-name>  
+<url-pattern>/servlet/FirstServlet</url-pattern>  
+</servlet-mapping>  
+
+<servlet-mapping>  
+<servlet-name>s2</servlet-name>  
+<url-pattern>/servlet/SecondServlet</url-pattern>  
+</servlet-mapping>
+
+<servlet>  
+<servlet-name>DemoServ</servlet-name>  
+<servlet-class>DemoServ</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>DemoServ</servlet-name>  
+<url-pattern>/servlet/welcome</url-pattern>  
+</servlet-mapping>
+
+<servlet>
+<servlet-name>session</servlet-name>
+<servlet-class>session</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>session</servlet-name>
+<url-pattern>/servlet/sessioncookie</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>FormServlet</servlet-name>
+<servlet-class>FormServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>FormServlet</servlet-name>
+<url-pattern>/servlet/FormServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>HeaderServlet</servlet-name>
+<servlet-class>HeaderServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>HeaderServlet</servlet-name>
+<url-pattern>/hs</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>InsertServ</servlet-name>
+<servlet-class>InsertServ</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>InsertServ</servlet-name>
+<url-pattern>/servlet/InsertServ</url-pattern>
+</servlet-mapping>
+
+<servlet>  
+    <servlet-name>Login</servlet-name>  
+    <servlet-class>Login</servlet-class>  
+  </servlet>  
+  <servlet>  
+    <servlet-name>WelcomeServlet</servlet-name>  
+    <servlet-class>WelcomeServlet</servlet-class>  
+  </servlet>  
+  
+  
+  <servlet-mapping>  
+    <servlet-name>Login</servlet-name>  
+    <url-pattern>/servlet/Login</url-pattern>
+  </servlet-mapping>  
+  <servlet-mapping>  
+    <servlet-name>WelcomeServlet</servlet-name>  
+    <url-pattern>/servlet/WelcomeServlet</url-pattern>  
+  </servlet-mapping>
+
+<servlet>
+<servlet-name>Jsp</servlet-name>
+<servlet-class>Jsp</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Jsp</servlet-name>
+<url-pattern>/servlet/Jsp</url-pattern>
+</servlet-mapping>
+
+</web-app>
+
+
+
